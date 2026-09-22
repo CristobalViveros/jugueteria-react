@@ -1,122 +1,101 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
-  return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+  const productos=[
+  {
+    id: 1,
+    nombre: 'Pelota de fútbol',
+    descripcion: 'Pelota de fútbol de alta calidad para jugar en cualquier superficie.',
+    precio: '14.990'
+  },
+  {
+    id: 2,
+    nombre: 'Muñeca Barbie',
+    descripcion: 'Muñeca Barbie con accesorios y ropa de moda.',
+    precio: '19.990'
+  },
+  {
+    id: 3,
+    nombre: 'Rompecabezas 3D',
+    descripcion: 'Rompecabezas 3D de madera para construir modelos detallados.',
+    precio: '24.990'
+  },
+  {
+    id: 4,
+    nombre: 'Set de construcción LEGO',
+    descripcion: 'Set de construcción LEGO para estimular la creatividad y la imaginación.',
+    precio: '29.990'
+  },
+  {
+    id: 5,
+    nombre: 'Auto de control remoto',
+    descripcion: 'Auto de control remoto con luces y sonidos para una experiencia emocionante.',
+    precio: '34.990'
+  }
 
-      <div className="ticks"></div>
+  ];
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+return(  
+  <>
+    <header>
+			<h1>Juguetería Mundo Feliz</h1>
+			<p>Los mejores juguetes para todas las edades</p>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+			<nav id="menu-principal">
+				<ul>
+					<li><a href="#inicio">Inicio</a></li>
+					<li><a href="#catalogo">Catálogo</a></li>
+					<li><a href="#comprar">Comprar</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1">Youtube</a></li>
+					<li><a href="#contacto">Contacto</a></li>
+				</ul>
+			</nav>
+
+    </header>
+
+    <main id="contenido">
+			<section id="inicio" className="seccion">
+				<h2>Bienvenidos</h2>
+				<p>Juguetería Mundo Feliz</p>
+				<p>Diversión garantizada para grandes y chicos</p>
+			</section>
+
+			<section id="catalogo" className="seccion">
+				<h2>Catálogo</h2>
+				<p>Aquí va una cuadrícula de tarjetas con espacio para imágenes. Haz clic en una tarjeta para marcarla como favorita.</p>
+				<p id="contador-favoritos">Favoritos: 0</p>
+
+				<div className="galeria">
+          {
+            productos.map((producto) => (
+              <article className="tarjeta">
+              <div className="espacio-imagen" key={producto.id}>
+                <img src=""/>
+              </div>
+                <h3>{producto.nombre}</h3>
+                <p>{producto.descripcion}</p>
+                <p>Precio: ${producto.precio}</p>
+              
+              </article>
+            ))
+          }
+				</div>
+			</section>
+
+			<section id="comprar" className="seccion">
+				<h2>Comprar</h2>
+				<p>Completa el formulario para hacer tu pedido:</p>
+
+				
+			</section>
+
+      <footer id="pie">
+			    <p><small>&copy; <span id="anio-actual">2025</span> Juguetería Mundo Feliz - Todos los derechos reservados</small></p>
+		  </footer>
+		</main>
+  </> 
+) 
 }
 
 export default App
