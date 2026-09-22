@@ -1,4 +1,10 @@
 import './App.css'
+import pelotaFutbol from './assets/pelota-futbol.jpg'
+import muñecaBarbie from './assets/muñeca-barbie.jpg'
+import RompeCabezas3D from './assets/rompecabezas-3d.jpg'
+import LegoSet from './assets/lego-set.jpg'
+import autoControlRemoto from './assets/auto-control-remoto.jpg'
+
 
 function App() {
 
@@ -7,31 +13,36 @@ function App() {
     id: 1,
     nombre: 'Pelota de fútbol',
     descripcion: 'Pelota de fútbol de alta calidad para jugar en cualquier superficie.',
-    precio: '14.990'
+    precio: '14.990',
+    imagen: pelotaFutbol
   },
   {
     id: 2,
     nombre: 'Muñeca Barbie',
     descripcion: 'Muñeca Barbie con accesorios y ropa de moda.',
-    precio: '19.990'
+    precio: '19.990',
+    imagen: muñecaBarbie
   },
   {
     id: 3,
     nombre: 'Rompecabezas 3D',
     descripcion: 'Rompecabezas 3D de madera para construir modelos detallados.',
-    precio: '24.990'
+    precio: '24.990',
+    imagen: RompeCabezas3D
   },
   {
     id: 4,
     nombre: 'Set de construcción LEGO',
     descripcion: 'Set de construcción LEGO para estimular la creatividad y la imaginación.',
-    precio: '29.990'
+    precio: '29.990',
+    imagen: LegoSet
   },
   {
     id: 5,
     nombre: 'Auto de control remoto',
     descripcion: 'Auto de control remoto con luces y sonidos para una experiencia emocionante.',
-    precio: '34.990'
+    precio: '34.990',
+    imagen: autoControlRemoto
   }
 
   ];
@@ -71,7 +82,7 @@ return(
             productos.map((producto) => (
               <article className="tarjeta">
               <div className="espacio-imagen" key={producto.id}>
-                <img src=""/>
+                <img src={producto.imagen} alt={producto.nombre} />
               </div>
                 <h3>{producto.nombre}</h3>
                 <p>{producto.descripcion}</p>
@@ -91,7 +102,7 @@ return(
 			</section>
 
       <footer id="pie">
-			    <p><small>&copy; <span id="anio-actual">2025</span> Juguetería Mundo Feliz - Todos los derechos reservados</small></p>
+			    <p><small>&copy; <span id="anio-actual">2026</span> Juguetería Mundo Feliz - Todos los derechos reservados</small></p>
 		  </footer>
 		</main>
   </> 
