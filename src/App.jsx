@@ -1,9 +1,10 @@
 import './App.css'
-import pelotaFutbol from './assets/pelota-futbol.jpg'
-import muñecaBarbie from './assets/muñeca-barbie.jpg'
-import RompeCabezas3D from './assets/rompecabezas-3d.jpg'
-import LegoSet from './assets/lego-set.jpg'
-import autoControlRemoto from './assets/auto-control-remoto.jpg'
+import logo from './assets/img/LogoJugueteria.png'
+import pelotaFutbol from './assets/img/pelota-futbol.jpg'
+import muñecaBarbie from './assets/img/muñeca-barbie.jpg'
+import RompeCabezas3D from './assets/img/RompeCabezas3D.jpg'
+import LegoSet from './assets/img/LegoSet.jpg'
+import autoControlRemoto from './assets/img/autoControlRemoto.jpg'
 
 
 function App() {
@@ -49,39 +50,42 @@ function App() {
 
 return(  
   <>
-    <header>
-			<h1>Juguetería Mundo Feliz</h1>
-			<p>Los mejores juguetes para todas las edades</p>
+    <div className="header-hero-section">
+      <header>
+        <img src={logo} alt="Logo Juguetería Mundo Feliz" className="logo-header" />
+        <h1>Juguetería Mundo Feliz</h1>
+        <p>Los mejores juguetes para todas las edades</p>
 
-			<nav id="menu-principal">
-				<ul>
-					<li><a href="#inicio">Inicio</a></li>
-					<li><a href="#catalogo">Catálogo</a></li>
-					<li><a href="#comprar">Comprar</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1">Youtube</a></li>
-					<li><a href="#contacto">Contacto</a></li>
-				</ul>
-			</nav>
+        <nav id="menu-principal">
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#catalogo">Catálogo</a></li>
+            <li><a href="#comprar">Comprar</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+      </header>
 
-    </header>
+      <main id="contenido">
+        <section id="inicio" className="seccion-hero">
+          <h2>Bienvenidos</h2>
+          <p>Juguetería Mundo Feliz</p>
+          <p>Diversión garantizada para grandes y chicos</p>
+        </section>
+      </main>
+    </div>
 
-    <main id="contenido">
-			<section id="inicio" className="seccion">
-				<h2>Bienvenidos</h2>
-				<p>Juguetería Mundo Feliz</p>
-				<p>Diversión garantizada para grandes y chicos</p>
-			</section>
+    <main id="contenido-catalogo">
+      <section id="catalogo" className="seccion">
+        <h2>Nuestros Productos</h2>
+        <p>Descubre nuestros juguetes favoritos y elige con confianza el regalo perfecto.</p>
+        <p id="contador-favoritos">Favoritos: 0</p>
 
-			<section id="catalogo" className="seccion">
-				<h2>Catálogo</h2>
-				<p>Aquí va una cuadrícula de tarjetas con espacio para imágenes. Haz clic en una tarjeta para marcarla como favorita.</p>
-				<p id="contador-favoritos">Favoritos: 0</p>
-
-				<div className="galeria">
+        <div className="galeria">
           {
             productos.map((producto) => (
-              <article className="tarjeta">
-              <div className="espacio-imagen" key={producto.id}>
+              <article className="tarjeta" key={producto.id}>
+              <div className="espacio-imagen">
                 <img src={producto.imagen} alt={producto.nombre} />
               </div>
                 <h3>{producto.nombre}</h3>
@@ -91,20 +95,18 @@ return(
               </article>
             ))
           }
-				</div>
-			</section>
+        </div>
+      </section>
 
-			<section id="comprar" className="seccion">
-				<h2>Comprar</h2>
-				<p>Completa el formulario para hacer tu pedido:</p>
+      <section id="comprar" className="seccion">
+        <h2>Comprar</h2>
+        <p>Completa el formulario para hacer tu pedido:</p>
+      </section>
+    </main>
 
-				
-			</section>
-
-      <footer id="pie">
-			    <p><small>&copy; <span id="anio-actual">2026</span> Juguetería Mundo Feliz - Todos los derechos reservados</small></p>
-		  </footer>
-		</main>
+    <footer id="pie">
+      <p><small>&copy; <span id="anio-actual">2026</span> Juguetería Mundo Feliz - Todos los derechos reservados</small></p>
+    </footer>
   </> 
 ) 
 }
