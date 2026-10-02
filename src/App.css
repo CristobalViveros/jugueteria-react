@@ -218,10 +218,17 @@ header p {
     font-size: 12px;
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
     flex-grow: 1;
+}
+
+.precio-producto {
+    flex-grow: 0;
+    font-weight: bold;
+    color: rgb(41, 121, 255);
+    display: block !important;
+    overflow: visible;
 }
 
 .tarjeta p:last-child {
